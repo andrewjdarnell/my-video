@@ -1,5 +1,5 @@
 <template id="beat-4-template">
-  <div data-hf-id="hf-b4" data-composition-id="beat-4" data-width="1920" data-height="1080" data-duration="7.0">
+  <div data-hf-id="hf-b4" data-composition-id="beat-4" data-width="1920" data-height="1080" data-duration="10.0">
     <div data-hf-id="hf-vrso" class="ambient-bg">
       <div data-hf-id="hf-h9vs" class="orb orb-cyan"></div>
       <div data-hf-id="hf-55zt" class="noise-overlay"></div>
@@ -203,45 +203,57 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <script>
       (function() {
+        // Resolve dynamic timing configuration
+        const masterDuration = (window.parent && window.parent.MASTER_BEAT_DURATION) || 10;
+        const mult = (window.parent && window.parent.BEAT_MULTIPLIERS && window.parent.BEAT_MULTIPLIERS["beat-4"]) || 1.0;
+        const duration = masterDuration * mult;
+
+        // Dynamically update template root duration attribute
+        const root = document.querySelector("[data-composition-id]");
+        root.setAttribute("data-duration", duration);
+
+        // Scale relative to original design baseline of 3.5 seconds
+        const scale = duration / 3.5;
+
         const tl = gsap.timeline({ paused: true });
 
-        // Container entry (duration scaled to 2x)
+        // Container entry (scaled)
         tl.fromTo(".main-container", 
           { opacity: 0, y: 50 }, 
-          { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, 
+          { opacity: 1, y: 0, duration: 0.8 * scale, ease: "power2.out" }, 
           0.0
         );
 
         // Header Title
         tl.fromTo(".section-title", 
           { opacity: 0, x: -20 }, 
-          { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 
-          0.4
+          { opacity: 1, x: 0, duration: 0.6 * scale, ease: "power2.out" }, 
+          0.2 * scale
         );
 
         // Table Rows Stagger Reveal
         tl.fromTo(".table-row", 
           { opacity: 0, y: 15 }, 
-          { opacity: 1, y: 0, duration: 1.0, stagger: 0.4, ease: "power1.out" }, 
-          0.8
+          { opacity: 1, y: 0, duration: 0.5 * scale, stagger: 0.2 * scale, ease: "power1.out" }, 
+          0.4 * scale
         );
 
-        // Highlights on each row synced to pops (starts and durations doubled)
-        tl.to("#row-1", { className: "table-row active-row", duration: 0.2 }, 1.2);
-        tl.to("#row-1", { className: "table-row", duration: 0.2 }, 2.4);
+        // Highlights on each row synced to pops (scaled)
+        tl.to("#row-1", { className: "table-row active-row", duration: 0.1 * scale }, 0.6 * scale);
+        tl.to("#row-1", { className: "table-row", duration: 0.1 * scale }, 1.2 * scale);
         
-        tl.to("#row-2", { className: "table-row active-row", duration: 0.2 }, 2.6);
-        tl.to("#row-2", { className: "table-row", duration: 0.2 }, 3.8);
+        tl.to("#row-2", { className: "table-row active-row", duration: 0.1 * scale }, 1.3 * scale);
+        tl.to("#row-2", { className: "table-row", duration: 0.1 * scale }, 1.9 * scale);
 
-        tl.to("#row-3", { className: "table-row active-row", duration: 0.2 }, 4.0);
-        tl.to("#row-3", { className: "table-row", duration: 0.2 }, 5.2);
+        tl.to("#row-3", { className: "table-row active-row", duration: 0.1 * scale }, 2.0 * scale);
+        tl.to("#row-3", { className: "table-row", duration: 0.1 * scale }, 2.6 * scale);
 
-        tl.to("#row-4", { className: "table-row active-row", duration: 0.2 }, 5.4);
+        tl.to("#row-4", { className: "table-row active-row", duration: 0.1 * scale }, 2.7 * scale);
 
         // Camera Pan
         tl.to("[data-composition-id='beat-4']", {
           scale: 1.02,
-          duration: 7.0,
+          duration: duration,
           ease: "power1.inOut"
         }, 0);
 

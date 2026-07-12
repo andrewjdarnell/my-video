@@ -1,5 +1,5 @@
 <template id="beat-2-template">
-  <div data-hf-id="hf-b2" data-composition-id="beat-2" data-width="1920" data-height="1080" data-duration="7.0">
+  <div data-hf-id="hf-b2" data-composition-id="beat-2" data-width="1920" data-height="1080" data-duration="10.0">
     <!-- Ambient Background -->
     <div data-hf-id="hf-vrso" class="ambient-bg">
       <div data-hf-id="hf-e3dq" class="orb orb-red"></div>
@@ -200,47 +200,59 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <script>
       (function() {
+        // Resolve dynamic timing configuration
+        const masterDuration = (window.parent && window.parent.MASTER_BEAT_DURATION) || 10;
+        const mult = (window.parent && window.parent.BEAT_MULTIPLIERS && window.parent.BEAT_MULTIPLIERS["beat-2"]) || 1.0;
+        const duration = masterDuration * mult;
+
+        // Dynamically update template root duration attribute
+        const root = document.querySelector("[data-composition-id]");
+        root.setAttribute("data-duration", duration);
+
+        // Scale relative to original design baseline of 3.5 seconds
+        const scale = duration / 3.5;
+
         const tl = gsap.timeline({ paused: true });
 
-        // Card Entry (duration scaled to 2x)
+        // Card Entry (scaled)
         tl.fromTo(".main-container", 
           { opacity: 0, y: 50 }, 
-          { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, 
+          { opacity: 1, y: 0, duration: 0.8 * scale, ease: "power2.out" }, 
           0.0
         );
 
         // Header Title Character Sweep
         tl.fromTo(".section-title", 
           { opacity: 0, x: -20 }, 
-          { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 
-          0.6
+          { opacity: 1, x: 0, duration: 0.6 * scale, ease: "power2.out" }, 
+          0.3 * scale
         );
 
         // Concept Text
         tl.fromTo(".concept", 
           { opacity: 0, y: 15 }, 
-          { opacity: 1, y: 0, duration: 1.2 }, 
-          1.0
+          { opacity: 1, y: 0, duration: 0.6 * scale }, 
+          0.5 * scale
         );
 
         // Bullet list points stagger
         tl.fromTo(".bullet-item", 
           { opacity: 0, x: -20 }, 
-          { opacity: 1, x: 0, duration: 1.0, stagger: 0.3, ease: "power2.out" }, 
-          1.4
+          { opacity: 1, x: 0, duration: 0.5 * scale, stagger: 0.15 * scale, ease: "power2.out" }, 
+          0.7 * scale
         );
 
         // Quote Box Pop
         tl.fromTo(".quote-panel", 
           { opacity: 0, scale: 0.95 }, 
-          { opacity: 1, scale: 1, duration: 1.4, ease: "back.out(1.5)" }, 
-          1.6
+          { opacity: 1, scale: 1, duration: 0.7 * scale, ease: "back.out(1.5)" }, 
+          0.8 * scale
         );
 
         // Camera Pan/Dolly
         tl.to("[data-composition-id='beat-2']", {
           scale: 1.02,
-          duration: 7.0,
+          duration: duration,
           ease: "power1.inOut"
         }, 0);
 

@@ -1,0 +1,8 @@
+[h1] Quality Engineering
+[p] Evolving from finding bugs to building quality in.
+[strong] Speaker:
+[p] Andrew Darnell
+[p] Principal Test Engineer
+[span] ← Prev / Backspace
+[span] Next / Space →
+[button] Mode: Manual

@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style type="text/css" data-vite-dev-id="/Users/user/Documents/src/qe_pres/src/style.css">:root {
+  --bg-dark: #0f1115;
+  --bg-slide: #1a1d24;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-color: #0ea5e9;
+  --accent-glow: rgba(14, 165, 233, 0.4);
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  
+  --glass-bg: rgba(26, 29, 36, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Timer Progress Bar for Autoplay Mode */
+#timer-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent-color);
+  width: 0%;
+  z-index: 1000;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Slide Container */
+#presentation {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  max-height: 850px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual Slide */
+.slide {
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  padding: 3rem 4rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.98);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  z-index: 10;
+}
+
+/* Typography */
+h1, h2, h3 {
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.2rem;
+  background: linear-gradient(135deg, #ffffff 40%, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  border-left: 5px solid var(--accent-color);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+li::marker {
+  color: var(--accent-color);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Layout Utilities */
+.columns {
+  display: flex;
+  gap: 2.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1.15rem;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+th {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Interactive Simulation Layout (Slide 6) */
+.sim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+}
+
+.sim-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.sim-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-main);
+}
+
+.sim-sprint-badge {
+  background: var(--accent-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.sim-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.sim-panel {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.sim-panel.active-panel {
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+.sim-panel-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Visualization Board */
+.sim-board {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.sim-conveyor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+  height: 100%;
+  justify-content: center;
+}
+
+/* Developer & QA/QE lanes */
+.sim-lane {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.015);
+  border-radius: 30px;
+  padding: 0 15px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sim-lane::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  right: 65px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.sim-actor {
+  font-size: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+.sim-actor.dev {
+  margin-right: 15px;
+}
+
+.sim-actor.tester {
+  position: absolute;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.sim-actor.tester.active-tester {
+  border-color: var(--accent-color);
+  background: rgba(14, 165, 233, 0.15);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Animated Code Block */
+.sim-block {
+  width: 32px;
+  height: 32px;
+  background: var(--text-muted);
+  border-radius: 6px;
+  position: absolute;
+  left: 45px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #000;
+  transition: transform 0.1s linear, background-color 0.3s, opacity 0.3s;
+}
+
+.sim-block.testing {
+  background: #f59e0b;
+}
+
+.sim-block.passed {
+  background: var(--accent-green);
+  opacity: 0;
+  transform: scale(0.5) translateX(150px) !important;
+  transition: all 0.4s ease-out;
+}
+
+.sim-block.skipped {
+  background: var(--accent-red);
+  opacity: 0.7;
+  left: auto !important;
+  right: 0;
+  transform: scale(0.8) translateY(20px) !important;
+  transition: all 0.4s ease-out;
+}
+
+.sim-block.queued {
+  background: #f59e0b;
+}
+
+.sim-block.untested {
+  background: var(--accent-red);
+  box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+}
+
+/* Stats dashboard */
+.sim-stats {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 0.75rem;
+  border: 1px solid var(--glass-border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-val {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.panel-explanation {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  min-height: 60px;
+  line-height: 1.4;
+}
+
+/* Buttons */
+button {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid var(--glass-border);
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button.active-btn {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+#btn-timer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  border-color: rgba(255,255,255,0.1);
+  color: var(--text-muted);
+}
+
+#btn-timer-toggle:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+
+#btn-timer-toggle.timed-active {
+  border-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Controls Hint & Progress */
+.controls-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 100;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+/* ====== NEW STYLES: AESTHETICS & SIMULATION ====== */
+
+/* Ambient Orb Background */
+#ambient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: floatOrb 20s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+  width: 40vw;
+  height: 40vw;
+  background: rgba(14, 165, 233, 0.2);
+  top: -10%;
+  left: -10%;
+}
+
+.orb-2 {
+  width: 30vw;
+  height: 30vw;
+  background: rgba(16, 185, 129, 0.15);
+  bottom: -10%;
+  right: -5%;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 20vw;
+  height: 20vw;
+  background: rgba(168, 85, 247, 0.1);
+  top: 40%;
+  left: 40%;
+  animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10vw, 5vh) scale(1.1); }
+}
+
+/* Noise Overlay */
+.noise-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Headers update */
+h1, h2, h3, .sim-title, .sim-panel-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+
+
+/* Presentation Aspect Ratio Wrapper */
+#presentation-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#presentation {
+  width: 1280px;
+  height: 720px;
+  max-width: none;
+  max-height: none;
+  position: relative;
+  /* scaling handled in JS */
+}
+
+/* Product Pile */
+.product-pile {
+  position: absolute;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+}
+
+.pile-block {
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  margin: 1px;
+  position: absolute;
+  transition: background-color 0.3s;
+}
+
+.pile-block.green {
+  background: var(--accent-green);
+  box-shadow: 0 0 3px rgba(16, 185, 129, 0.5);
+}
+
+.pile-block.red {
+  background: var(--accent-red);
+  box-shadow: 0 0 3px rgba(239, 68, 68, 0.5);
+}
+
+</style>
+<style>@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42Vksj.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf) format('truetype');
+}
+</style>
+<script type="module" src="/@vite/client"></script>
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div id="ambient-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="noise-overlay"></div>
+    </div>
+    <!-- Top-level timer progress bar for autoplay -->
+    <div id="timer-progress-bar" style="transition: none; width: 0%;"></div>
+
+    <div id="presentation-wrapper">
+      <main id="presentation" style="transform: scale(1.5);">
+      
+      <!-- Slide 1: Title -->
+      <div class="slide active">
+        <h1>Quality Engineering</h1>
+        <p class="subtitle">Evolving from finding bugs to building quality in.</p>
+        <p><strong>Speaker:</strong> Andrew Darnell</p>
+        <p>Principal Test Engineer</p>
+      </div>
+
+      <!-- Slide 2: QA -->
+      <div class="slide">
+        <h2>The Traditional Approach: <span class="highlight">Quality Assurance (QA)</span></h2>
+        <div class="columns">
+          <div class="column">
+            <p><strong>Concept:</strong> Reactive testing at the end of the development cycle.</p>
+            <ul style="margin-top: 1rem;">
+              <li>Focuses on detecting defects <em>after</em> they are introduced.</li>
+              <li>Often a separate phase performed by a distinct, siloed team.</li>
+              <li>Heavy reliance on manual execution and repetitive tasks.</li>
+              <li>The unfortunate perception: <em>"Quality is the QA team's responsibility."</em></li>
+            </ul>
+          </div>
+          <div class="column" style="justify-content: center;">
+            <div class="sim-panel" style="background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.2); justify-content: center; align-items: center; min-height: 250px;">
+              <p style="font-size: 2.2rem; text-align: center; font-style: italic; color: #f87171; line-height: 1.3;">
+                "We can't release yet, QA is still testing."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: QE -->
+      <div class="slide">
+        <h2>The Evolution: <span class="highlight">Quality Engineering (QE)</span></h2>
+        <div class="columns">
+          <div class="column">
+            <p><strong>Concept:</strong> Proactive integration of quality practices throughout the entire software development lifecycle.</p>
+            <ul style="margin-top: 1rem;">
+              <li>The same QA skills are reused, but instead of reviewing quality just once at the end, they are turned into <strong>continuous assurance</strong>.</li>
+              <li>Focuses on <em>preventing</em> defects and improving engineering processes.</li>
+              <li>Integrated directly into CI/CD pipelines for continuous feedback.</li>
+              <li>Repetitive testing is done by machine, preserving human attention for creative testing approaches.</li>
+              <li>The reality: <em>"Quality is everyone's responsibility."</em></li>
+            </ul>
+          </div>
+          <div class="column" style="justify-content: center;">
+            <div class="sim-panel" style="background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2); justify-content: center; align-items: center; min-height: 250px;">
+              <p style="font-size: 2.2rem; text-align: center; font-style: italic; color: #34d399; line-height: 1.3;">
+                "Quality is built into the pipeline, not audited at the end."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Key Differences -->
+      <div class="slide">
+        <h2>Key Differences <span class="highlight">(The Shift in Mindset)</span></h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 1.15rem;">
+          <tbody><tr style="border-bottom: 2px solid var(--glass-border); padding: 1rem;">
+            <th style="text-align: left; padding: 1rem; color: var(--text-muted);">From Traditional QA...</th>
+            <th style="text-align: left; padding: 1rem; color: var(--accent-color);">To Quality Engineering...</th>
+          </tr>
+          <tr>
+            <td style="padding: 1rem; font-weight: 600;">Reactive finding of bugs</td>
+            <td style="padding: 1rem; font-weight: 600; color: #fff;">Proactive mitigation of risk</td>
+          </tr>
+          <tr>
+            <td style="padding: 1rem;">Manual Test Execution</td>
+            <td style="padding: 1rem; color: #fff;">Test Automation &amp; Infrastructure creation</td>
+          </tr>
+          <tr>
+            <td style="padding: 1rem;">Siloed gatekeepers</td>
+            <td style="padding: 1rem; color: #fff;">Embedded Quality Experts and enablers</td>
+          </tr>
+          <tr>
+            <td style="padding: 1rem;">A bottleneck to release</td>
+            <td style="padding: 1rem; color: #fff;">An accelerator for speed and scale</td>
+          </tr>
+        </tbody></table>
+      </div>
+
+      <!-- Slide 5: Feedback loops -->
+      <div class="slide">
+        <h2>Accelerating through <span class="highlight">Feedback Loops</span></h2>
+        <div class="columns">
+          <div class="column">
+            <ul>
+              <li><strong>Continuous Feedback:</strong> Building unit tests and automated checks into the CI/CD pipeline gives instant feedback to developers, helping them build better quality code from day one.</li>
+              <li><strong>Shifting Left:</strong> It isn't about pushing testing onto developers. It is about Quality Engineering working collaboratively with Development to enable quality checks early.</li>
+              <li><strong>Addressing Complexity:</strong> Component and integration tests address combinatorial system complexity on solid ground, reducing the need for massive end-to-end regression runs.</li>
+              <li><strong>Strategic E2E:</strong> End-to-end tests remain vital for validating concert operations and critical business journeys, but shouldn't be the primary safety net.</li>
+            </ul>
+          </div>
+          <div class="column" style="justify-content: center; align-items: center;">
+            <div style="width: 320px; height: 320px; border-radius: 50%; border: 3px dashed var(--accent-color); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; text-align: center; position: relative; background: rgba(14, 165, 233, 0.03); box-shadow: 0 0 30px rgba(14,165,233,0.1);">
+              <div style="font-size: 3rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px var(--accent-glow));">🔄</div>
+              <strong style="font-size: 1.4rem; color: white;">The Loop</strong>
+              <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0.5rem 0 0 0;">Code → Build → Auto-Test → Fast Feedback</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6: Sprint Simulation -->
+      <div class="slide" id="animation-slide">
+        <h2>The Scaling Problem vs. The Automation Engine</h2>
+        
+        <div class="sim-header">
+          <div class="sim-title">
+            Sprint Timeline Simulation <span class="sim-sprint-badge" id="sim-sprint-num">Sprint 0 / 10</span>
+          </div>
+          <div class="sim-controls">
+            <button id="btn-next-sprint">Next Sprint →</button>
+            <button id="btn-play-sprint">Autoplay</button>
+            <button id="btn-reset-sprint">Reset</button>
+          </div>
+        </div>
+
+        <div class="sim-grid">
+          <!-- QA Panel -->
+          <div class="sim-panel" id="panel-qa">
+            <div class="sim-panel-title">
+              <span>QA Bottleneck (Manual Testing)</span>
+              <span style="color: var(--accent-red); font-size: 0.85rem; font-weight: normal;">Fixed Capacity</span>
+            </div>
+            
+            <div class="sim-board">
+              <div class="sim-conveyor">
+                <div class="sim-lane" id="qa-lane-1">
+                  <span class="sim-actor dev">👩‍💻</span>
+                  <!-- Blocks will be dynamically spawned here -->
+                  <div class="sim-actor tester" id="qa-tester-1" aria-label="Tester">🕵️</div>
+                  <div class="product-pile" id="qa-pile-1"></div>
+                </div>
+                <div class="sim-lane" id="qa-lane-2">
+                  <span class="sim-actor dev">👨‍💻</span>
+                  <div class="sim-actor tester" id="qa-tester-2" aria-label="Tester">🕵️</div>
+                  <div class="product-pile" id="qa-pile-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-stats">
+              <div class="stat-item">
+                <div class="stat-val" id="qa-stat-built">0</div>
+                <div class="stat-label">Built</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val" style="color: var(--accent-green);" id="qa-stat-verified">0</div>
+                <div class="stat-label">Verified</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val" style="color: var(--accent-red);" id="qa-stat-escaped">0</div>
+                <div class="stat-label">Escaped Bugs</div>
+              </div>
+            </div>
+            
+            <div class="panel-explanation" id="qa-explanation">Press "Next Sprint" to start development and testing simulation.</div>
+          </div>
+
+          <!-- QE Panel -->
+          <div class="sim-panel" id="panel-qe">
+            <div class="sim-panel-title">
+              <span>QE Automation (Continuous Testing)</span>
+              <span style="color: var(--accent-green); font-size: 0.85rem; font-weight: normal;">Scalable Capacity</span>
+            </div>
+            
+            <div class="sim-board">
+              <div class="sim-conveyor">
+                <div class="sim-lane" id="qe-lane-1">
+                  <span class="sim-actor dev">👩‍💻</span>
+                  <div class="sim-actor tester" id="qe-tester-1" aria-label="Tester">🤖</div>
+                  <div class="product-pile" id="qe-pile-1"></div>
+                </div>
+                <div class="sim-lane" id="qe-lane-2">
+                  <span class="sim-actor dev">👨‍💻</span>
+                  <div class="sim-actor tester" id="qe-tester-2" aria-label="Tester">🤖</div>
+                  <div class="product-pile" id="qe-pile-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-stats">
+              <div class="stat-item">
+                <div class="stat-val" id="qe-stat-built">0</div>
+                <div class="stat-label">Built</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val" style="color: var(--accent-green);" id="qe-stat-verified">0</div>
+                <div class="stat-label">Verified</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val" style="color: var(--accent-red);" id="qe-stat-escaped">0</div>
+                <div class="stat-label">Escaped Bugs</div>
+              </div>
+            </div>
+            
+            <div class="panel-explanation" id="qe-explanation">Press "Next Sprint" to start development and testing simulation.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7: Why Shift -->
+      <div class="slide">
+        <h2>Why Make the Shift?</h2>
+        <div class="columns">
+          <div class="column">
+            <h3 style="color: var(--accent-color); border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">For the Business (Managers)</h3>
+            <ul>
+              <li><strong>More Predictable Projects:</strong> Consistent delivery velocity.</li>
+              <li><strong>Faster Time to Market:</strong> Automatic regression runs.</li>
+              <li><strong>Higher Confidence:</strong> Less risk in production.</li>
+              <li><strong>Lower Long-Term Costs:</strong> Shift-left identifies bugs when they are cheapest to resolve.</li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3 style="color: var(--accent-color); border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">For the Team (QAs)</h3>
+            <ul>
+              <li><strong>No Scripted Regression:</strong> Let the machines do the repetitive tasks.</li>
+              <li><strong>Upskill Into Engineering:</strong> Grow coding capability.</li>
+              <li><strong>High-Value Scope:</strong> Focus human intellect on exploratory and design-level testing.</li>
+              <li><strong>Empower the Organization:</strong> Create testing frameworks and tools.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8: Shared Skills -->
+      <div class="slide">
+        <h2>Shared Skills &amp; Shared Outcomes</h2>
+        <div class="columns">
+          <div class="column">
+            <p><strong>QA and QE care about the same goals:</strong></p>
+            <ul>
+              <li>Analyzing specifications and requirements (explicit and implicit).</li>
+              <li>Analyzing potential risks and causes of failure.</li>
+              <li>Designing strategies to mitigate and reduce those risks.</li>
+              <li>Communicating issues and impact directly to stakeholders.</li>
+            </ul>
+          </div>
+          <div class="column">
+            <div class="sim-panel" style="justify-content: center; height: 100%;">
+              <h3 style="color: var(--accent-color);">The Force Multiplier</h3>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.5;">
+                Manual risk-based testing forces us to compromise on quality early in the lifecycle because of limited time.
+              </p>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.5rem;">
+                <strong>Automation is like adding a parallel workforce</strong> executing high-value checks 24/7. It allows us to prioritize based on strategy, not because we ran out of hours in the sprint.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9: Automation Fallacy -->
+      <div class="slide">
+        <h2>Debunking the "Too Expensive" Fallacy</h2>
+        <div class="columns">
+          <div class="column" style="flex: 1.2;">
+            <ul>
+              <li><strong>Long-Term Math:</strong> A typical project takes 6 to 36 months to develop and runs for 5 to 10+ years in production. Monthly releases mean 72 to 120+ cycles. The upfront cost of automation pays back exponential dividends.</li>
+              <li><strong>Zero Risk Appetite:</strong> Our platforms make life-changing decisions. The cost of bugs escaping into production is massive—both in system integrity and customer trust.</li>
+              <li><strong>Protecting Customers:</strong> Our customers are our biggest asset. Preventing bugs in production is our ultimate duty of care.</li>
+            </ul>
+          </div>
+          <div class="column" style="flex: 0.8; justify-content: center;">
+            <div class="sim-panel" style="text-align: center; padding: 2rem; border-color: var(--accent-color);">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">📈</div>
+              <h3 style="margin-bottom: 0.5rem;">ROI of Automation</h3>
+              <p style="font-size: 1rem; color: var(--text-muted); margin: 0;">Upfront Dev Effort ↓</p>
+              <p style="font-size: 1rem; color: var(--accent-green); font-weight: bold; margin-top: 0.25rem;">Exponential Long-Term Savings ↑</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 10: First Line of Defence -->
+      <div class="slide">
+        <h2>First Line of Defence</h2>
+        <div class="columns">
+          <div class="column">
+            <p>Moving from manual judgment to systematic guardrails:</p>
+            <ul>
+              <li><strong>Old Way (QA):</strong> Relying entirely on manual tester judgment to decide what to check and what to skip under deadline pressure.</li>
+              <li><strong>New Way (QE):</strong> The automated testing framework operates as the first line of defence, the last line of defence, and everything in between.</li>
+            </ul>
+            <div class="sim-panel" style="margin-top: 1rem; background: rgba(14, 165, 233, 0.05); padding: 1rem; border-left: 4px solid var(--accent-color);">
+              <strong style="color: white; font-size: 1.05rem;">QE Rule of Thumb:</strong>
+              <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+                Identify where you currently limit your tests due to available human effort. <strong>That is your next automation target.</strong>
+              </p>
+            </div>
+          </div>
+          <div class="column" style="justify-content: center; align-items: center;">
+            <div style="font-size: 6rem; filter: drop-shadow(0 0 20px var(--accent-glow));">🛡️</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 11: How do we go about this? -->
+      <div class="slide">
+        <h2>Action Plan: How Do We Go About This?</h2>
+        <div class="columns" style="font-size: 0.95rem;">
+          <div class="column">
+            <h3 style="font-size: 1.25rem; color: var(--accent-color);">Technical Skillset</h3>
+            <ul>
+              <li><strong>Start with Python:</strong> A powerful, accessible scripting language with a massive test automation ecosystem.</li>
+              <li><strong>Master E2E &amp; API:</strong> Focus on browser end-to-end automation (Playwright/Selenium) and API integration verification.</li>
+              <li><strong>CI/CD Pipelines:</strong> Understand how code is built and deployed. Run tests automatically in the pipeline.</li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3 style="font-size: 1.25rem; color: var(--accent-color);">Mindset Shift</h3>
+            <ul>
+              <li><strong>Think Big:</strong> If you had a virtual army of 1,000 parallel testers, what would you test? Automation gives you that capability.</li>
+              <li><strong>Start Small:</strong> Solve your immediate regression bottleneck first. Take small steps.</li>
+              <li><strong>Leverage AI:</strong> Use AI to assist with writing scripts where appropriate, but maintain critical thinking over the verification logic.</li>
+              <li><strong>Evaluate constantly:</strong> <em>"Are our feedback loops working?"</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 12: Call to Action -->
+      <div class="slide">
+        <h1 style="text-align: center; margin-bottom: 0.5rem;">Elevate Our Quality.</h1>
+        <div class="sim-panel" style="align-items: center; justify-content: center; margin-top: 1.5rem; background: rgba(14, 165, 233, 0.08); border-color: var(--accent-color); padding: 2.5rem;">
+          <h2 style="border: none; text-align: center; padding: 0; margin-bottom: 1rem;">Join the <span class="highlight">QE Guild</span></h2>
+          <p style="text-align: center; font-size: 1.35rem; max-width: 750px; color: var(--text-main); margin-bottom: 1.5rem;">
+            Learn to build Unit tests, Component tests, Browser tests, API tests, and Performance tests. <strong>We are here to help you grow!</strong>
+          </p>
+          <p style="text-align: center; font-size: 1.25rem; color: var(--text-muted); margin: 0;">
+            Reach out directly to address that tricky automation problem you've been struggling with.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 13: Contact -->
+      <div class="slide">
+        <h2>Contact</h2>
+        <div style="margin-top: 3rem; font-size: 1.8rem;">
+          <p style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--accent-color);">Andrew Darnell</p>
+          <p style="font-size: 1.5rem;">Principal Test Engineer</p>
+          <p style="margin-top: 3rem; font-size: 1.25rem; color: var(--text-muted);">Let's connect after the session!</p>
+        </div>
+      </div>
+
+      <!-- Controls Hint & Progress & Toggle Mode -->
+      <div class="controls-hint" style="left: 40px; transform: none; width: calc(100% - 80px); justify-content: space-between; align-items: center;">
+        <div>
+          <span>← Prev / Backspace</span>
+          <span style="margin-left: 2rem;">Next / Space →</span>
+        </div>
+        <div>
+          <!-- Manual / Timed Option Button -->
+          <button id="btn-timer-toggle" style="background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem;">
+            Mode: Manual
+          </button>
+        </div>
+      </div>
+      <div class="progress-bar" id="progress-bar" style="width: 7.69231%;"></div>
+
+          </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  
+
+
+</body>
+</html>

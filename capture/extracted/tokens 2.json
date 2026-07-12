@@ -1,0 +1,142 @@
+{
+  "title": "Quality Engineering vs Quality Assurance",
+  "description": "",
+  "cssVariables": {
+    "--bg-dark": "#0f1115",
+    "--bg-slide": "#1a1d24",
+    "--text-main": "#e2e8f0",
+    "--text-muted": "#94a3b8",
+    "--accent-color": "#0ea5e9",
+    "--accent-glow": "rgba(14, 165, 233, 0.4)",
+    "--accent-green": "#10b981",
+    "--accent-red": "#ef4444",
+    "--glass-bg": "rgba(26, 29, 36, 0.75)",
+    "--glass-border": "rgba(255, 255, 255, 0.08)",
+    "--glass-shadow": "0 12px 40px 0 rgba(0, 0, 0, 0.5)"
+  },
+  "fonts": [
+    {
+      "family": "Inter",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "variable": false
+    },
+    {
+      "family": "Space Grotesk",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "variable": false
+    }
+  ],
+  "colors": [
+    "#1A1D24",
+    "#E2E8F0",
+    "#FFFFFF",
+    "#0EA5E9",
+    "#0F1115",
+    "#94A3B8",
+    "#10B981",
+    "#EF4444",
+    "#A855F7"
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Quality Engineering",
+      "fontSize": "51.2px",
+      "fontWeight": "700",
+      "color": "#FFFFFF"
+    }
+  ],
+  "ctas": [],
+  "svgs": [],
+  "sections": [],
+  "colorStats": [
+    {
+      "hex": "#E2E8F0",
+      "count": 14,
+      "bgCount": 0,
+      "interactiveBg": 0,
+      "areaBg": 0,
+      "textCount": 14,
+      "maxArea": 0
+    },
+    {
+      "hex": "#94A3B8",
+      "count": 7,
+      "bgCount": 0,
+      "interactiveBg": 0,
+      "areaBg": 0,
+      "textCount": 7,
+      "maxArea": 0
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 2,
+      "bgCount": 1,
+      "interactiveBg": 1,
+      "areaBg": 0,
+      "textCount": 1,
+      "maxArea": 8041
+    },
+    {
+      "hex": "#0EA5E9",
+      "count": 3,
+      "bgCount": 3,
+      "interactiveBg": 0,
+      "areaBg": 1,
+      "textCount": 0,
+      "maxArea": 613161
+    },
+    {
+      "hex": "#0F1115",
+      "count": 2,
+      "bgCount": 2,
+      "interactiveBg": 0,
+      "areaBg": 2,
+      "textCount": 0,
+      "maxArea": 2073600
+    },
+    {
+      "hex": "#10B981",
+      "count": 1,
+      "bgCount": 1,
+      "interactiveBg": 0,
+      "areaBg": 1,
+      "textCount": 0,
+      "maxArea": 372564
+    },
+    {
+      "hex": "#A855F7",
+      "count": 1,
+      "bgCount": 1,
+      "interactiveBg": 0,
+      "areaBg": 1,
+      "textCount": 0,
+      "maxArea": 175959
+    },
+    {
+      "hex": "#1A1D24",
+      "count": 1,
+      "bgCount": 1,
+      "interactiveBg": 0,
+      "areaBg": 1,
+      "textCount": 0,
+      "maxArea": 1772928
+    }
+  ],
+  "page": {
+    "width": 1920,
+    "height": 1080,
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}

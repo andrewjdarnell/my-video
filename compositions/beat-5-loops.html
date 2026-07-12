@@ -1,5 +1,5 @@
 <template id="beat-5-template">
-  <div data-hf-id="hf-b5" data-composition-id="beat-5" data-width="1920" data-height="1080" data-duration="7.0">
+  <div data-hf-id="hf-b5" data-composition-id="beat-5" data-width="1920" data-height="1080" data-duration="10.0">
     <div data-hf-id="hf-vrso" class="ambient-bg">
       <div data-hf-id="hf-h9vs" class="orb orb-cyan"></div>
       <div data-hf-id="hf-55zt" class="noise-overlay"></div>
@@ -258,61 +258,73 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <script>
       (function() {
+        // Resolve dynamic timing configuration
+        const masterDuration = (window.parent && window.parent.MASTER_BEAT_DURATION) || 10;
+        const mult = (window.parent && window.parent.BEAT_MULTIPLIERS && window.parent.BEAT_MULTIPLIERS["beat-5"]) || 1.0;
+        const duration = masterDuration * mult;
+
+        // Dynamically update template root duration attribute
+        const root = document.querySelector("[data-composition-id]");
+        root.setAttribute("data-duration", duration);
+
+        // Scale relative to original design baseline of 3.5 seconds
+        const scale = duration / 3.5;
+
         const tl = gsap.timeline({ paused: true });
 
-        // Container entry (duration scaled to 2x)
+        // Container entry (scaled)
         tl.fromTo(".main-container", 
           { opacity: 0, y: 50 }, 
-          { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, 
+          { opacity: 1, y: 0, duration: 0.8 * scale, ease: "power2.out" }, 
           0.0
         );
 
         // Header Title
         tl.fromTo(".section-title", 
           { opacity: 0, x: -20 }, 
-          { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 
-          0.4
+          { opacity: 1, x: 0, duration: 0.6 * scale, ease: "power2.out" }, 
+          0.2 * scale
         );
 
         // Bullet points stagger
         tl.fromTo(".bullet-item", 
           { opacity: 0, x: -25 }, 
-          { opacity: 1, x: 0, duration: 1.2, stagger: 0.3, ease: "power2.out" }, 
-          0.8
+          { opacity: 1, x: 0, duration: 0.6 * scale, stagger: 0.15 * scale, ease: "power2.out" }, 
+          0.4 * scale
         );
 
         // SVG Loop Pop
         tl.fromTo(".loop-container", 
           { opacity: 0, scale: 0.9 }, 
-          { opacity: 1, scale: 1, duration: 1.6, ease: "back.out(1.5)" }, 
-          1.2
+          { opacity: 1, scale: 1, duration: 0.8 * scale, ease: "back.out(1.5)" }, 
+          0.6 * scale
         );
 
         // Rotate Loop Emoji (finite duration for loop safety)
         tl.to("#loop-emoji-icon", {
-          rotation: 720,
-          duration: 7.0,
+          rotation: 360 * scale,
+          duration: duration,
           ease: "none"
         }, 0);
 
-        // Animate Circle Drawing & Tracer Dot Orbit (duration scaled to 2x)
+        // Animate Circle Drawing & Tracer Dot Orbit (scaled)
         tl.fromTo("#glowing-circle", 
           { strokeDashoffset: 502 }, 
-          { strokeDashoffset: 0, duration: 7.0, ease: "power1.inOut" }, 
-          1.2
+          { strokeDashoffset: 0, duration: duration - 0.6 * scale, ease: "power1.inOut" }, 
+          0.6 * scale
         );
 
         // Orbit Tracer Dot (360 degrees rotation around center)
         tl.fromTo("#tracer", 
           { rotation: 0 }, 
-          { rotation: 360, duration: 7.0, ease: "power1.inOut" }, 
-          1.2
+          { rotation: 360, duration: duration - 0.6 * scale, ease: "power1.inOut" }, 
+          0.6 * scale
         );
 
         // Camera Pan
         tl.to("[data-composition-id='beat-5']", {
           scale: 1.02,
-          duration: 7.0,
+          duration: duration,
           ease: "power1.inOut"
         }, 0);
 
