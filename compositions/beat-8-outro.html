@@ -1,0 +1,190 @@
+<template id="beat-8-template">
+  <div data-hf-id="hf-b8" data-composition-id="beat-8" data-width="1920" data-height="1080" data-duration="6.0">
+    <div data-hf-id="hf-vrso" class="ambient-bg">
+      <div data-hf-id="hf-4t5u" class="orb orb-1"></div>
+      <div data-hf-id="hf-0v1t" class="orb orb-2"></div>
+      <div data-hf-id="hf-55zt" class="noise-overlay"></div>
+    </div>
+    
+    <img data-hf-id="hf-q8sb" class="bg-grid" src="assets/swiss-grid.svg" alt="Grid">
+
+    <div data-hf-id="hf-6j7d" class="glass-card" id="outro-card">
+      <h1 data-hf-id="hf-y31a" class="title">Ready to Evolve?</h1>
+      <p data-hf-id="hf-y10i" class="subtitle">Shift left. Automate loops. Unleash velocity.</p>
+      <div data-hf-id="hf-hqtz" class="cta-btn">Join the QE Guild</div>
+    </div>
+
+    <style>
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf") format("truetype");
+        font-weight: 600;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-8"] {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+        font-family: "Inter", sans-serif;
+        color: #e2e8f0;
+        overflow: hidden;
+      }
+
+      .ambient-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        background-color: #0f1115;
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.15;
+      }
+      .orb-1 {
+        width: 600px;
+        height: 600px;
+        background-color: #0ea5e9;
+        top: -100px;
+        right: -100px;
+      }
+      .orb-2 {
+        width: 500px;
+        height: 500px;
+        background-color: #10b981;
+        bottom: -100px;
+        left: -100px;
+      }
+      .noise-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, transparent 20%, #0f1115 80%);
+        opacity: 0.8;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.08;
+        z-index: 1;
+      }
+
+      .glass-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1200px;
+        background: rgba(26, 29, 36, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 80px 100px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 2;
+        text-align: center;
+      }
+
+      .title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 80px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+        background: linear-gradient(135deg, #ffffff 40%, #0ea5e9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -2px;
+        line-height: 1.1;
+      }
+
+      .subtitle {
+        font-size: 28px;
+        color: #94a3b8;
+        margin: 0 0 50px 0;
+        line-height: 1.4;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #0ea5e9;
+        border: 1px solid rgba(14, 165, 233, 0.4);
+        padding: 16px 40px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+        transition: all 0.3s ease;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+
+        // Card Entry (duration scaled to 2x)
+        tl.fromTo("#outro-card", 
+          { opacity: 0, scale: 0.96 }, 
+          { opacity: 1, scale: 1, duration: 1.6, ease: "power3.out" }, 
+          0.0
+        );
+
+        tl.fromTo(".title", 
+          { y: 30, opacity: 0 }, 
+          { y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }, 
+          0.6
+        );
+
+        tl.fromTo(".subtitle", 
+          { y: 20, opacity: 0 }, 
+          { y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }, 
+          1.0
+        );
+
+        tl.fromTo(".cta-btn", 
+          { y: 15, opacity: 0 }, 
+          { y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }, 
+          1.4
+        );
+
+        // Continuous zoom
+        tl.to("[data-composition-id='beat-8']", {
+          scale: 1.02,
+          duration: 6.0,
+          ease: "sine.inOut"
+        }, 0);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["beat-8"] = tl;
+      })();
+    </script>
+  </div>
+</template>

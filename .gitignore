@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+
+# HyperFrames cache & local configurations
+.hyperframes/
+.thumbnails/
+
+# Snapshots and rendered outputs
+snapshots/
+renders/
+
+# Ignored video/audio outputs at root or other directories
+*.mp4
+*.webm
+*.mov
+*.gif
+*.wav
+*.mp3
+
+# Do not ignore files in assets
+!assets/**/*
+
+# System and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

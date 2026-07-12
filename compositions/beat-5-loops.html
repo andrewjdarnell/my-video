@@ -1,0 +1,324 @@
+<template id="beat-5-template">
+  <div data-hf-id="hf-b5" data-composition-id="beat-5" data-width="1920" data-height="1080" data-duration="7.0">
+    <div data-hf-id="hf-vrso" class="ambient-bg">
+      <div data-hf-id="hf-h9vs" class="orb orb-cyan"></div>
+      <div data-hf-id="hf-55zt" class="noise-overlay"></div>
+    </div>
+    
+    <img data-hf-id="hf-q8sb" class="bg-grid" src="assets/swiss-grid.svg" alt="Grid">
+
+    <div data-hf-id="hf-29es" class="glass-card main-container">
+      <h2 data-hf-id="hf-xr9m" class="section-title">Accelerating through <span data-hf-id="hf-wzh7" class="highlight">Feedback Loops</span></h2>
+      
+      <div data-hf-id="hf-zyj5" class="columns">
+        <div data-hf-id="hf-k4so" class="column-left">
+          <ul data-hf-id="hf-4cop" class="bullet-list">
+            <li data-hf-id="hf-au92" class="bullet-item"><strong data-hf-id="hf-r6iq">Continuous Feedback:</strong> Building unit tests and automated checks into the pipeline gives instant feedback to developers.</li>
+            <li data-hf-id="hf-b5b9" class="bullet-item"><strong data-hf-id="hf-t46f">Shifting Left:</strong> It is about Quality Engineering working collaboratively with Development to enable quality checks early.</li>
+            <li data-hf-id="hf-0k6c" class="bullet-item"><strong data-hf-id="hf-7zeg">Addressing Complexity:</strong> Integration tests address system complexity on solid ground, reducing the need for massive manual runs.</li>
+          </ul>
+        </div>
+        
+        <div data-hf-id="hf-6xg7" class="column-right">
+          <div data-hf-id="hf-2b1g" class="loop-container">
+            <svg data-hf-id="hf-x343" class="loop-svg" viewBox="0 0 200 200">
+              <!-- Background Dashed Circle -->
+              <circle data-hf-id="hf-tsnf" class="base-circle" cx="100" cy="100" r="80" />
+              <!-- Animated Glowing Circle Line -->
+              <circle data-hf-id="hf-8sur" class="animated-circle" id="glowing-circle" cx="100" cy="100" r="80" />
+              <!-- Glowing Tracer Dot -->
+              <circle data-hf-id="hf-bf4i" class="tracer-dot" id="tracer" cx="100" cy="20" r="6" />
+            </svg>
+            <div data-hf-id="hf-54yo" class="loop-center">
+              <span data-hf-id="hf-rnpy" class="loop-emoji" id="loop-emoji-icon">🔄</span>
+              <strong data-hf-id="hf-vr42" class="loop-title">The Loop</strong>
+              <span data-hf-id="hf-uezp" class="loop-labels">Code → Build → Test → Feedback</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf") format("truetype");
+        font-weight: 600;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-5"] {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+        font-family: "Inter", sans-serif;
+        color: #e2e8f0;
+        overflow: hidden;
+      }
+
+      .ambient-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: #0f1115;
+      }
+      .orb-cyan {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background-color: #0ea5e9;
+        filter: blur(140px);
+        opacity: 0.08;
+        top: 30%;
+        left: 80%;
+      }
+      .noise-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, transparent 30%, #0f1115 85%);
+        opacity: 0.8;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.08;
+        z-index: 1;
+      }
+
+      .main-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;
+        height: 800px;
+        background: rgba(26, 29, 36, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 60px 80px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 30px 0;
+        color: #ffffff;
+      }
+
+      .highlight {
+        color: #0ea5e9;
+        text-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+      }
+
+      .columns {
+        display: flex;
+        flex: 1;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .column-left {
+        flex: 1.1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .bullet-list {
+        margin: 0;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .bullet-item {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #94a3b8;
+      }
+
+      .bullet-item strong {
+        color: #ffffff;
+      }
+
+      .column-right {
+        flex: 0.9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loop-container {
+        position: relative;
+        width: 360px;
+        height: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loop-svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg); /* Start trace from top */
+      }
+
+      .base-circle {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.04);
+        stroke-width: 4;
+        stroke-dasharray: 6, 6;
+      }
+
+      .animated-circle {
+        fill: none;
+        stroke: #0ea5e9;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-dasharray: 502; /* 2 * PI * 80 */
+        stroke-dashoffset: 502;
+        filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
+      }
+
+      .tracer-dot {
+        fill: #0ea5e9;
+        filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.8));
+        transform-origin: 100px 100px;
+      }
+
+      .loop-center {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: rgba(14, 165, 233, 0.03);
+        border: 2px dashed rgba(14, 165, 233, 0.15);
+        box-shadow: 0 0 30px rgba(14, 165, 233, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .loop-emoji {
+        font-size: 48px;
+        margin-bottom: 8px;
+        filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.4));
+      }
+
+      .loop-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 4px;
+      }
+
+      .loop-labels {
+        font-size: 13px;
+        color: #94a3b8;
+        line-height: 1.4;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+
+        // Container entry (duration scaled to 2x)
+        tl.fromTo(".main-container", 
+          { opacity: 0, y: 50 }, 
+          { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, 
+          0.0
+        );
+
+        // Header Title
+        tl.fromTo(".section-title", 
+          { opacity: 0, x: -20 }, 
+          { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 
+          0.4
+        );
+
+        // Bullet points stagger
+        tl.fromTo(".bullet-item", 
+          { opacity: 0, x: -25 }, 
+          { opacity: 1, x: 0, duration: 1.2, stagger: 0.3, ease: "power2.out" }, 
+          0.8
+        );
+
+        // SVG Loop Pop
+        tl.fromTo(".loop-container", 
+          { opacity: 0, scale: 0.9 }, 
+          { opacity: 1, scale: 1, duration: 1.6, ease: "back.out(1.5)" }, 
+          1.2
+        );
+
+        // Rotate Loop Emoji (finite duration for loop safety)
+        tl.to("#loop-emoji-icon", {
+          rotation: 720,
+          duration: 7.0,
+          ease: "none"
+        }, 0);
+
+        // Animate Circle Drawing & Tracer Dot Orbit (duration scaled to 2x)
+        tl.fromTo("#glowing-circle", 
+          { strokeDashoffset: 502 }, 
+          { strokeDashoffset: 0, duration: 7.0, ease: "power1.inOut" }, 
+          1.2
+        );
+
+        // Orbit Tracer Dot (360 degrees rotation around center)
+        tl.fromTo("#tracer", 
+          { rotation: 0 }, 
+          { rotation: 360, duration: 7.0, ease: "power1.inOut" }, 
+          1.2
+        );
+
+        // Camera Pan
+        tl.to("[data-composition-id='beat-5']", {
+          scale: 1.02,
+          duration: 7.0,
+          ease: "power1.inOut"
+        }, 0);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["beat-5"] = tl;
+      })();
+    </script>
+  </div>
+</template>

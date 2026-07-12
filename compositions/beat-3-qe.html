@@ -1,0 +1,253 @@
+<template id="beat-3-template">
+  <div data-hf-id="hf-b3" data-composition-id="beat-3" data-width="1920" data-height="1080" data-duration="7.0">
+    <!-- Ambient Background -->
+    <div data-hf-id="hf-vrso" class="ambient-bg">
+      <div data-hf-id="hf-jczi" class="orb orb-green"></div>
+      <div data-hf-id="hf-55zt" class="noise-overlay"></div>
+    </div>
+    
+    <img data-hf-id="hf-q8sb" class="bg-grid" src="assets/swiss-grid.svg" alt="Grid">
+
+    <div data-hf-id="hf-29es" class="glass-card main-container">
+      <h2 data-hf-id="hf-kkpt" class="section-title">The Evolution: <span data-hf-id="hf-4jzo" class="highlight">Quality Engineering (QE)</span></h2>
+      
+      <div data-hf-id="hf-zyj5" class="columns">
+        <div data-hf-id="hf-k4so" class="column-left">
+          <p data-hf-id="hf-ezw9" class="concept"><strong data-hf-id="hf-pfio">Concept:</strong> Proactive integration of quality throughout the entire lifecycle.</p>
+          <ul data-hf-id="hf-4cop" class="bullet-list">
+            <li data-hf-id="hf-tvd3" class="bullet-item">QA skills are turned into <strong data-hf-id="hf-b3ls">continuous assurance</strong> checkpoints.</li>
+            <li data-hf-id="hf-wwif" class="bullet-item">Focuses on <em data-hf-id="hf-y1zd">preventing</em> defects and improving engineering processes.</li>
+            <li data-hf-id="hf-hygl" class="bullet-item">Integrated directly into CI/CD pipelines for rapid feedback loops.</li>
+            <li data-hf-id="hf-7z2k" class="bullet-item">Repetitive checks run on machines, saving human focus for creative exploration.</li>
+            <li data-hf-id="hf-cl9t" class="bullet-item">The reality: <em data-hf-id="hf-nw8n">"Quality is everyone's responsibility."</em></li>
+          </ul>
+        </div>
+        
+        <div data-hf-id="hf-6xg7" class="column-right">
+          <div data-hf-id="hf-ugrl" class="quote-panel">
+            <p data-hf-id="hf-wm4j" class="quote-text">"Quality is built into the pipeline, not audited at the end."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf") format("truetype");
+        font-weight: 600;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-3"] {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+        font-family: "Inter", sans-serif;
+        color: #e2e8f0;
+        overflow: hidden;
+      }
+
+      .ambient-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: #0f1115;
+      }
+      .orb-green {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background-color: #10b981;
+        filter: blur(140px);
+        opacity: 0.08;
+        top: 20%;
+        left: 10%;
+      }
+      .noise-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, transparent 30%, #0f1115 85%);
+        opacity: 0.8;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.08;
+        z-index: 1;
+      }
+
+      .main-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;
+        height: 800px;
+        background: rgba(26, 29, 36, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 60px 80px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 30px 0;
+        color: #ffffff;
+      }
+
+      .highlight {
+        color: #10b981;
+        text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+      }
+
+      .columns {
+        display: flex;
+        flex: 1;
+        gap: 60px;
+      }
+
+      .column-left {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .concept {
+        font-size: 22px;
+        line-height: 1.5;
+        margin: 0 0 24px 0;
+        color: #e2e8f0;
+      }
+
+      .bullet-list {
+        margin: 0;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .bullet-item {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #94a3b8;
+      }
+
+      .column-right {
+        flex: 0.8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .quote-panel {
+        width: 100%;
+        background: rgba(16, 185, 129, 0.04);
+        border: 1px solid rgba(16, 185, 129, 0.15);
+        border-radius: 8px;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 280px;
+        box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.05);
+      }
+
+      .quote-text {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 34px;
+        font-style: italic;
+        color: #10b981;
+        line-height: 1.4;
+        text-align: center;
+        margin: 0;
+        filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.2));
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+
+        // Card Entry (duration scaled to 2x)
+        tl.fromTo(".main-container", 
+          { opacity: 0, y: 50 }, 
+          { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, 
+          0.0
+        );
+
+        // Header Title
+        tl.fromTo(".section-title", 
+          { opacity: 0, x: -20 }, 
+          { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 
+          0.6
+        );
+
+        // Concept Text
+        tl.fromTo(".concept", 
+          { opacity: 0, y: 15 }, 
+          { opacity: 1, y: 0, duration: 1.2 }, 
+          1.0
+        );
+
+        // Bullet points stagger
+        tl.fromTo(".bullet-item", 
+          { opacity: 0, x: -20 }, 
+          { opacity: 1, x: 0, duration: 1.0, stagger: 0.24, ease: "power2.out" }, 
+          1.4
+        );
+
+        // Quote Box Pop
+        tl.fromTo(".quote-panel", 
+          { opacity: 0, scale: 0.95 }, 
+          { opacity: 1, scale: 1, duration: 1.4, ease: "back.out(1.5)" }, 
+          1.6
+        );
+
+        // Camera Pan
+        tl.to("[data-composition-id='beat-3']", {
+          scale: 1.02,
+          duration: 7.0,
+          ease: "power1.inOut"
+        }, 0);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["beat-3"] = tl;
+      })();
+    </script>
+  </div>
+</template>

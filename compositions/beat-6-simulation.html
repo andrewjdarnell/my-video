@@ -1,0 +1,566 @@
+<template id="beat-6-template">
+  <div data-hf-id="hf-b6" data-composition-id="beat-6" data-width="1920" data-height="1080" data-duration="28.0">
+    <!-- Ambient Background -->
+    <div data-hf-id="hf-vrso" class="ambient-bg">
+      <div data-hf-id="hf-m1oe" class="orb orb-left"></div>
+      <div data-hf-id="hf-0sdx" class="orb orb-right"></div>
+      <div data-hf-id="hf-55zt" class="noise-overlay"></div>
+    </div>
+    
+    <img data-hf-id="hf-q8sb" class="bg-grid" src="assets/swiss-grid.svg" alt="Grid">
+
+    <div data-hf-id="hf-29es" class="glass-card main-container">
+      <div data-hf-id="hf-76a4" class="header-row">
+        <h2 data-hf-id="hf-doon" class="section-title">Scaling Quality: <span data-hf-id="hf-3eeo" class="highlight">Traditional QA vs. QE Automation</span></h2>
+        <div data-hf-id="hf-5l6g" class="sprint-badge">Sprint <span data-hf-id="hf-zv4w" id="sprint-counter">1</span> / 10</div>
+      </div>
+      
+      <div data-hf-id="hf-jhj0" class="showdown-grid">
+        <!-- Left Side: QA Manual Bottleneck -->
+        <div data-hf-id="hf-vstm" class="showdown-lane qa-lane" id="qa-panel">
+          <div data-hf-id="hf-6jh4" class="lane-header">
+            <h3 data-hf-id="hf-s57j">Manual QA Bottleneck</h3>
+            <span data-hf-id="hf-2uvf" class="lane-status status-alert" id="qa-status">Capacity Normal</span>
+          </div>
+          
+          <div data-hf-id="hf-rx5z" class="conveyor-belt" id="qa-belt">
+            <div data-hf-id="hf-kvfj" class="conveyor-actor dev">👩‍💻<br data-hf-id="hf-x5px"><small data-hf-id="hf-3u86">Developer</small></div>
+            <div data-hf-id="hf-2rlx" class="conveyor-track">
+              <!-- Animated blocks will be positioned absolutely here -->
+              <div data-hf-id="hf-znl4" class="code-block" id="qa-block-1">{ code }</div>
+              <div data-hf-id="hf-o6z3" class="code-block" id="qa-block-2">{ code }</div>
+              <div data-hf-id="hf-mtri" class="code-block" id="qa-block-3">{ code }</div>
+              <div data-hf-id="hf-sqdx" class="code-block" id="qa-block-4">{ code }</div>
+              <div data-hf-id="hf-lv98" class="code-block" id="qa-block-5">{ code }</div>
+              <div data-hf-id="hf-fyrn" class="code-block" id="qa-block-6">{ code }</div>
+              
+              <!-- Red bug blocks flying off -->
+              <div data-hf-id="hf-hkyk" class="bug-block" id="bug-1">🐛</div>
+              <div data-hf-id="hf-vqkj" class="bug-block" id="bug-2">🐛</div>
+              <div data-hf-id="hf-ggg2" class="bug-block" id="bug-3">🐛</div>
+            </div>
+            <div data-hf-id="hf-2xtr" class="conveyor-actor tester">🕵️<br data-hf-id="hf-rsrt"><small data-hf-id="hf-vobg">Manual QA</small></div>
+          </div>
+          
+          <div data-hf-id="hf-uzwm" class="stats-dashboard">
+            <div data-hf-id="hf-inpa" class="stat-box">
+              <span data-hf-id="hf-9qac" class="stat-label">Verified Releases</span>
+              <span data-hf-id="hf-bpja" class="stat-val" id="qa-verified">0</span>
+            </div>
+            <div data-hf-id="hf-3yf2" class="stat-box warning-box">
+              <span data-hf-id="hf-ray6" class="stat-label">Escaped Bugs</span>
+              <span data-hf-id="hf-pstx" class="stat-val val-alert" id="qa-bugs">0</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side: QE Automation Accelerator -->
+        <div data-hf-id="hf-lw9u" class="showdown-lane qe-lane" id="qe-panel">
+          <div data-hf-id="hf-onlc" class="lane-header">
+            <h3 data-hf-id="hf-kzf5">QE Automation Engine</h3>
+            <span data-hf-id="hf-uu08" class="lane-status status-success" id="qe-status">Scalable Loop</span>
+          </div>
+          
+          <div data-hf-id="hf-z96b" class="conveyor-belt" id="qe-belt">
+            <div data-hf-id="hf-jo9r" class="conveyor-actor dev">👩‍💻<br data-hf-id="hf-szow"><small data-hf-id="hf-h68a">Developer</small></div>
+            <div data-hf-id="hf-7jbt" class="conveyor-track">
+              <!-- Animated blocks will be positioned absolutely here -->
+              <div data-hf-id="hf-tsvc" class="code-block qe-block" id="qe-block-1">{ code }</div>
+              <div data-hf-id="hf-crrj" class="code-block qe-block" id="qe-block-2">{ code }</div>
+              <div data-hf-id="hf-d27i" class="code-block qe-block" id="qe-block-3">{ code }</div>
+              <div data-hf-id="hf-4hcl" class="code-block qe-block" id="qe-block-4">{ code }</div>
+              <div data-hf-id="hf-0eyk" class="code-block qe-block" id="qe-block-5">{ code }</div>
+              <div data-hf-id="hf-0mpv" class="code-block qe-block" id="qe-block-6">{ code }</div>
+            </div>
+            <div data-hf-id="hf-c5oj" class="conveyor-actor robot">🤖<br data-hf-id="hf-sldv"><small data-hf-id="hf-vwjo">QE Pipeline</small></div>
+          </div>
+          
+          <div data-hf-id="hf-9xl6" class="stats-dashboard">
+            <div data-hf-id="hf-f2oy" class="stat-box">
+              <span data-hf-id="hf-mang" class="stat-label">Verified Releases</span>
+              <span data-hf-id="hf-tb19" class="stat-val val-success" id="qe-verified">0</span>
+            </div>
+            <div data-hf-id="hf-fgzz" class="stat-box">
+              <span data-hf-id="hf-uwc2" class="stat-label">Escaped Bugs</span>
+              <span data-hf-id="hf-9021" class="stat-val" id="qe-bugs">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf") format("truetype");
+        font-weight: 600;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-6"] {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+        font-family: "Inter", sans-serif;
+        color: #e2e8f0;
+        overflow: hidden;
+      }
+
+      .ambient-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: #0f1115;
+      }
+      .orb-left {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background-color: #ef4444;
+        filter: blur(140px);
+        opacity: 0.04;
+        top: 30%;
+        left: 10%;
+      }
+      .orb-right {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background-color: #10b981;
+        filter: blur(140px);
+        opacity: 0.04;
+        top: 30%;
+        right: 10%;
+      }
+      .noise-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, transparent 30%, #0f1115 85%);
+        opacity: 0.8;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.08;
+        z-index: 1;
+      }
+
+      .main-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1720px;
+        height: 860px;
+        background: rgba(26, 29, 36, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 50px 60px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0;
+        color: #ffffff;
+      }
+
+      .highlight {
+        color: #0ea5e9;
+      }
+
+      .sprint-badge {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        background: rgba(14, 165, 233, 0.1);
+        border: 1px solid rgba(14, 165, 233, 0.2);
+        color: #0ea5e9;
+        padding: 10px 24px;
+        border-radius: 20px;
+        letter-spacing: 1px;
+      }
+
+      .showdown-grid {
+        flex: 1;
+        display: flex;
+        gap: 40px;
+      }
+
+      .showdown-lane {
+        flex: 1;
+        background: rgba(15, 17, 21, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: 8px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+      }
+
+      .qa-lane {
+        border-left: 3px solid rgba(239, 68, 68, 0.3);
+      }
+      .qa-lane.saturated {
+        border-left: 3px solid rgba(239, 68, 68, 0.8);
+        box-shadow: 0 0 30px rgba(239, 68, 68, 0.05);
+      }
+
+      .qe-lane {
+        border-left: 3px solid rgba(16, 185, 129, 0.3);
+      }
+      .qe-lane.active {
+        border-left: 3px solid rgba(16, 185, 129, 0.8);
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.05);
+      }
+
+      .lane-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .lane-header h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 24px;
+        margin: 0;
+        color: #ffffff;
+      }
+
+      .lane-status {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 12px;
+      }
+
+      .status-alert {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        color: #f04f4f; /* Improved WCAG AA contrast */
+      }
+
+      .status-success {
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        color: #10b981;
+      }
+
+      .conveyor-belt {
+        height: 180px;
+        background: rgba(255, 255, 255, 0.01);
+        border: 1px dashed rgba(255, 255, 255, 0.08);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: relative;
+      }
+
+      .conveyor-actor {
+        text-align: center;
+        font-size: 36px;
+        line-height: 1.2;
+        width: 100px;
+        z-index: 5;
+      }
+
+      .conveyor-actor small {
+        font-size: 11px;
+        color: #94a3b8;
+        display: block;
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .conveyor-track {
+        flex: 1;
+        height: 100%;
+        position: relative;
+        overflow: visible;
+        margin: 0 20px;
+      }
+
+      .code-block {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #e2e8f0;
+        font-family: monospace;
+        font-size: 14px;
+        padding: 10px 18px;
+        border-radius: 4px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .code-block.verified {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: rgba(16, 185, 129, 0.4);
+        color: #10b981;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+      }
+
+      .code-block.rejected {
+        background: rgba(239, 68, 68, 0.15);
+        border-color: rgba(239, 68, 68, 0.5);
+        color: #f58080; /* Improved WCAG AA contrast */
+        box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+      }
+
+      .bug-block {
+        position: absolute;
+        font-size: 24px;
+        top: 50%;
+        left: 420px; /* Aligned with the tester by default */
+        transform: translateY(-50%);
+        opacity: 0;
+        filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+      }
+
+      .stats-dashboard {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .stat-box {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 6px;
+        padding: 18px 24px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .stat-label {
+        font-size: 13px;
+        color: #94a3b8;
+        margin-bottom: 6px;
+      }
+
+      .stat-val {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .val-alert {
+        color: #f04f4f; /* Improved WCAG AA contrast */
+        text-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+      }
+
+      .val-success {
+        color: #10b981;
+        text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+      }
+
+      .warning-box {
+        border-color: rgba(239, 68, 68, 0.1);
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+
+        // Entrance (slowed down by 4x)
+        tl.fromTo(".main-container", 
+          { opacity: 0, scale: 0.98 }, 
+          { opacity: 1, scale: 1, duration: 3.2, ease: "power2.out" }, 
+          0.0
+        );
+
+        // Sprint counter sweep (Sprint 1 to 10 releases over 24.0 seconds)
+        const sprintCounter = { val: 1 };
+        tl.to(sprintCounter, {
+          val: 10,
+          duration: 24.0,
+          ease: "none",
+          onUpdate: function() {
+            document.getElementById("sprint-counter").innerText = Math.round(sprintCounter.val);
+          }
+        }, 2.0);
+
+        // ----------------------------------------------------
+        // QE PIPELINE ANIMATION (Slowed down by a factor of 4)
+        // ----------------------------------------------------
+        // Block 1
+        tl.fromTo("#qe-block-1", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 2.0);
+        tl.to("#qe-block-1", { x: 420, duration: 4.0, ease: "none" }, 2.0);
+        tl.to("#qe-block-1", { className: "code-block qe-block verified", duration: 0.4 }, 6.0);
+        tl.to("#qe-block-1", { opacity: 0, y: -20, duration: 1.2 }, 6.4);
+
+        // Block 2
+        tl.fromTo("#qe-block-2", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 5.2);
+        tl.to("#qe-block-2", { x: 420, duration: 4.0, ease: "none" }, 5.2);
+        tl.to("#qe-block-2", { className: "code-block qe-block verified", duration: 0.4 }, 9.2);
+        tl.to("#qe-block-2", { opacity: 0, y: -20, duration: 1.2 }, 9.6);
+
+        // Block 3
+        tl.fromTo("#qe-block-3", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 8.4);
+        tl.to("#qe-block-3", { x: 420, duration: 4.0, ease: "none" }, 8.4);
+        tl.to("#qe-block-3", { className: "code-block qe-block verified", duration: 0.4 }, 12.4);
+        tl.to("#qe-block-3", { opacity: 0, y: -20, duration: 1.2 }, 12.8);
+
+        // Block 4
+        tl.fromTo("#qe-block-4", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 11.6);
+        tl.to("#qe-block-4", { x: 420, duration: 4.0, ease: "none" }, 11.6);
+        tl.to("#qe-block-4", { className: "code-block qe-block verified", duration: 0.4 }, 15.6);
+        tl.to("#qe-block-4", { opacity: 0, y: -20, duration: 1.2 }, 16.0);
+
+        // Block 5
+        tl.fromTo("#qe-block-5", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 14.8);
+        tl.to("#qe-block-5", { x: 420, duration: 4.0, ease: "none" }, 14.8);
+        tl.to("#qe-block-5", { className: "code-block qe-block verified", duration: 0.4 }, 18.8);
+        tl.to("#qe-block-5", { opacity: 0, y: -20, duration: 1.2 }, 19.2);
+
+        // Block 6
+        tl.fromTo("#qe-block-6", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 18.0);
+        tl.to("#qe-block-6", { x: 420, duration: 4.0, ease: "none" }, 18.0);
+        tl.to("#qe-block-6", { className: "code-block qe-block verified", duration: 0.4 }, 22.0);
+        tl.to("#qe-block-6", { opacity: 0, y: -20, duration: 1.2 }, 22.4);
+
+        // QE Counters increment
+        const qeVerifiedVal = { val: 0 };
+        tl.to(qeVerifiedVal, {
+          val: 35,
+          duration: 22.0,
+          ease: "none",
+          onUpdate: function() {
+            document.getElementById("qe-verified").innerText = Math.round(qeVerifiedVal.val);
+          }
+        }, 2.0);
+
+        // ----------------------------------------------------
+        // QA MANUAL PIPELINE ANIMATION (Slowed down by 4x)
+        // ----------------------------------------------------
+        // Block 1 (Passes QA)
+        tl.fromTo("#qa-block-1", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 2.0);
+        tl.to("#qa-block-1", { x: 420, duration: 4.8, ease: "none" }, 2.0);
+        tl.to("#qa-block-1", { className: "code-block verified", duration: 0.4 }, 6.8);
+        tl.to("#qa-block-1", { opacity: 0, y: -20, duration: 1.2 }, 7.2);
+
+        // Block 2 (Passes QA slowly)
+        tl.fromTo("#qa-block-2", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 4.8);
+        tl.to("#qa-block-2", { x: 420, duration: 4.8, ease: "none" }, 4.8);
+        tl.to("#qa-block-2", { className: "code-block verified", duration: 0.4 }, 9.6);
+        tl.to("#qa-block-2", { opacity: 0, y: -20, duration: 1.2 }, 10.0);
+
+        // QA Saturation Trigger (Sprint 3 / 8.0s onwards)
+        tl.to("#qa-panel", { className: "showdown-lane qa-lane saturated", duration: 0.8 }, 8.0);
+        tl.to("#qa-status", { textContent: "Saturated / Backlogged", duration: 0.4 }, 8.0);
+
+        // Block 3 (Slows down and piles up!)
+        tl.fromTo("#qa-block-3", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 7.6);
+        tl.to("#qa-block-3", { x: 420, duration: 6.0, ease: "power1.out" }, 7.6);
+        tl.to("#qa-block-3", { className: "code-block rejected", duration: 0.4 }, 13.6);
+
+        // Block 4 (Piles up behind block 3)
+        tl.fromTo("#qa-block-4", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 9.6);
+        tl.to("#qa-block-4", { x: 340, duration: 5.6, ease: "power1.out" }, 9.6);
+        tl.to("#qa-block-4", { className: "code-block rejected", duration: 0.4 }, 15.2);
+
+        // Block 5 (Piles up behind block 4)
+        tl.fromTo("#qa-block-5", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 11.6);
+        tl.to("#qa-block-5", { x: 260, duration: 5.2, ease: "power1.out" }, 11.6);
+        tl.to("#qa-block-5", { className: "code-block rejected", duration: 0.4 }, 16.8);
+
+        // Block 6 (Piles up behind block 5)
+        tl.fromTo("#qa-block-6", { x: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 13.6);
+        tl.to("#qa-block-6", { x: 180, duration: 4.8, ease: "power1.out" }, 13.6);
+        tl.to("#qa-block-6", { className: "code-block rejected", duration: 0.4 }, 18.4);
+
+        // Escaped Bugs start flying out from the bottleneck! (Times scaled 4x)
+        // Bug 1
+        tl.fromTo("#bug-1", { x: 0, y: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 15.2);
+        tl.to("#bug-1", { x: 100, y: -80, opacity: 0, scale: 1.5, duration: 4.0, ease: "power1.out" }, 15.6);
+
+        // Bug 2
+        tl.fromTo("#bug-2", { x: 0, y: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 18.0);
+        tl.to("#bug-2", { x: 120, y: -90, opacity: 0, scale: 1.5, duration: 4.0, ease: "power1.out" }, 18.4);
+
+        // Bug 3
+        tl.fromTo("#bug-3", { x: 0, y: 0, opacity: 0 }, { opacity: 1, duration: 0.4 }, 20.8);
+        tl.to("#bug-3", { x: 80, y: -70, opacity: 0, scale: 1.5, duration: 4.0, ease: "power1.out" }, 21.2);
+
+        // QA Counters
+        const qaVerifiedVal = { val: 0 };
+        tl.to(qaVerifiedVal, {
+          val: 5,
+          duration: 24.0,
+          ease: "power1.out",
+          onUpdate: function() {
+            document.getElementById("qa-verified").innerText = Math.round(qaVerifiedVal.val);
+          }
+        }, 2.0);
+
+        const qaBugsVal = { val: 0 };
+        tl.to(qaBugsVal, {
+          val: 18,
+          duration: 16.0,
+          ease: "power2.in",
+          onUpdate: function() {
+            document.getElementById("qa-bugs").innerText = Math.round(qaBugsVal.val);
+          }
+        }, 10.0);
+
+        // Camera Pan
+        tl.to("[data-composition-id='beat-6']", {
+          scale: 1.01,
+          duration: 28.0,
+          ease: "power1.inOut"
+        }, 0);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["beat-6"] = tl;
+      })();
+    </script>
+  </div>
+</template>

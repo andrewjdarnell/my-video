@@ -1,0 +1,253 @@
+<template id="beat-4-template">
+  <div data-hf-id="hf-b4" data-composition-id="beat-4" data-width="1920" data-height="1080" data-duration="7.0">
+    <div data-hf-id="hf-vrso" class="ambient-bg">
+      <div data-hf-id="hf-h9vs" class="orb orb-cyan"></div>
+      <div data-hf-id="hf-55zt" class="noise-overlay"></div>
+    </div>
+    
+    <img data-hf-id="hf-q8sb" class="bg-grid" src="assets/swiss-grid.svg" alt="Grid">
+
+    <div data-hf-id="hf-29es" class="glass-card main-container">
+      <h2 data-hf-id="hf-e9s8" class="section-title">Key Differences <span data-hf-id="hf-a90j" class="highlight">(The Mindset Shift)</span></h2>
+      
+      <div data-hf-id="hf-flfa" class="table-wrapper">
+        <table data-hf-id="hf-g6dx" class="diff-table">
+          <thead data-hf-id="hf-zd89">
+            <tr data-hf-id="hf-p3r7">
+              <th data-hf-id="hf-2fas">From Traditional QA...</th>
+              <th data-hf-id="hf-fkxu" class="accent-header">To Quality Engineering...</th>
+            </tr>
+          </thead>
+          <tbody data-hf-id="hf-bsvf">
+            <tr data-hf-id="hf-xy9u" class="table-row" id="row-1">
+              <td data-hf-id="hf-gqmm" class="qa-cell">Reactive finding of bugs</td>
+              <td data-hf-id="hf-y904" class="qe-cell">Proactive mitigation of risk</td>
+            </tr>
+            <tr data-hf-id="hf-rsk1" class="table-row" id="row-2">
+              <td data-hf-id="hf-oc20" class="qa-cell">Manual Test Execution</td>
+              <td data-hf-id="hf-tzto" class="qe-cell">Test Automation &amp; Infrastructure</td>
+            </tr>
+            <tr data-hf-id="hf-r0w8" class="table-row" id="row-3">
+              <td data-hf-id="hf-praa" class="qa-cell">Siloed gatekeepers</td>
+              <td data-hf-id="hf-t7vt" class="qe-cell">Embedded Quality Enablers</td>
+            </tr>
+            <tr data-hf-id="hf-n2s7" class="table-row" id="row-4">
+              <td data-hf-id="hf-x3me" class="qa-cell">A bottleneck to release</td>
+              <td data-hf-id="hf-vly7" class="qe-cell">An accelerator for speed and scale</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <style>
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsj.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("capture/assets/fonts/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksj.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("capture/assets/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf") format("truetype");
+        font-weight: 600;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-4"] {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+        font-family: "Inter", sans-serif;
+        color: #e2e8f0;
+        overflow: hidden;
+      }
+
+      .ambient-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: #0f1115;
+      }
+      .orb-cyan {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background-color: #0ea5e9;
+        filter: blur(140px);
+        opacity: 0.08;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .noise-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, transparent 30%, #0f1115 85%);
+        opacity: 0.8;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.08;
+        z-index: 1;
+      }
+
+      .main-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;
+        height: 800px;
+        background: rgba(26, 29, 36, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 60px 80px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 40px 0;
+        color: #ffffff;
+      }
+
+      .highlight {
+        color: #0ea5e9;
+        text-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+      }
+
+      .table-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .diff-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 22px;
+      }
+
+      .diff-table th {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: left;
+        padding: 20px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+        color: #94a3b8;
+      }
+
+      .diff-table th.accent-header {
+        color: #0ea5e9;
+      }
+
+      .diff-table td {
+        padding: 24px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        transition: all 0.3s ease;
+      }
+
+      .table-row {
+        opacity: 0;
+      }
+
+      .qa-cell {
+        color: #94a3b8;
+        font-weight: 400;
+        width: 50%;
+      }
+
+      .qe-cell {
+        color: #ffffff;
+        font-weight: 600;
+        width: 50%;
+        position: relative;
+      }
+
+      /* Active Highlight styling via Javascript classes */
+      .table-row.active-row td {
+        background: rgba(14, 165, 233, 0.04);
+      }
+      .table-row.active-row .qe-cell {
+        color: #0ea5e9;
+        text-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function() {
+        const tl = gsap.timeline({ paused: true });
+
+        // Container entry (duration scaled to 2x)
+        tl.fromTo(".main-container", 
+          { opacity: 0, y: 50 }, 
+          { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, 
+          0.0
+        );
+
+        // Header Title
+        tl.fromTo(".section-title", 
+          { opacity: 0, x: -20 }, 
+          { opacity: 1, x: 0, duration: 1.2, ease: "power2.out" }, 
+          0.4
+        );
+
+        // Table Rows Stagger Reveal
+        tl.fromTo(".table-row", 
+          { opacity: 0, y: 15 }, 
+          { opacity: 1, y: 0, duration: 1.0, stagger: 0.4, ease: "power1.out" }, 
+          0.8
+        );
+
+        // Highlights on each row synced to pops (starts and durations doubled)
+        tl.to("#row-1", { className: "table-row active-row", duration: 0.2 }, 1.2);
+        tl.to("#row-1", { className: "table-row", duration: 0.2 }, 2.4);
+        
+        tl.to("#row-2", { className: "table-row active-row", duration: 0.2 }, 2.6);
+        tl.to("#row-2", { className: "table-row", duration: 0.2 }, 3.8);
+
+        tl.to("#row-3", { className: "table-row active-row", duration: 0.2 }, 4.0);
+        tl.to("#row-3", { className: "table-row", duration: 0.2 }, 5.2);
+
+        tl.to("#row-4", { className: "table-row active-row", duration: 0.2 }, 5.4);
+
+        // Camera Pan
+        tl.to("[data-composition-id='beat-4']", {
+          scale: 1.02,
+          duration: 7.0,
+          ease: "power1.inOut"
+        }, 0);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["beat-4"] = tl;
+      })();
+    </script>
+  </div>
+</template>

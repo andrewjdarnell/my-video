@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Engineering vs Quality Assurance</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 1920px;
+        height: 1080px;
+        background-color: #0f1115;
+        overflow: hidden;
+      }
+
+      #master-root {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+      }
+
+      .beat-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-gqfl" id="master-root" data-composition-id="master" data-width="1920" data-height="1080" data-start="0" data-duration="76">
+      <!-- Background Audio Track (Track 0) -->
+      <audio data-hf-id="hf-45np" id="bgm" class="clip" src="assets/bgm.mp3" data-start="0" data-duration="76" data-track-index="0"></audio>
+
+      <!-- Sound Effects (Unique Tracks 2-17 to prevent overlap warnings) -->
+      <audio data-hf-id="hf-zna7" id="sfx-b1-chime" class="clip" src="assets/sfx/chime.mp3" data-start="0.4" data-duration="2.5" data-track-index="2"></audio>
+      <audio data-hf-id="hf-11v2" id="sfx-b2-whoosh" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="7.0" data-duration="0.57" data-track-index="3"></audio>
+      <audio data-hf-id="hf-1s5k" id="sfx-b2-error" class="clip" src="assets/sfx/error.mp3" data-start="8.6" data-duration="1.62" data-track-index="4"></audio>
+      <audio data-hf-id="hf-qaqh" id="sfx-b3-whoosh" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="14.0" data-duration="0.57" data-track-index="5"></audio>
+      <audio data-hf-id="hf-z1l9" id="sfx-b3-chime" class="clip" src="assets/sfx/chime.mp3" data-start="15.6" data-duration="2.5" data-track-index="6"></audio>
+      
+      <audio data-hf-id="hf-16us" id="sfx-b4-pop1" class="clip" src="assets/sfx/pop.mp3" data-start="22.2" data-duration="0.72" data-track-index="7"></audio>
+      <audio data-hf-id="hf-dwix" id="sfx-b4-pop2" class="clip" src="assets/sfx/pop.mp3" data-start="23.6" data-duration="0.72" data-track-index="8"></audio>
+      <audio data-hf-id="hf-u31r" id="sfx-b4-pop3" class="clip" src="assets/sfx/pop.mp3" data-start="25.0" data-duration="0.72" data-track-index="9"></audio>
+      <audio data-hf-id="hf-zu8d" id="sfx-b4-pop4" class="clip" src="assets/sfx/pop.mp3" data-start="26.4" data-duration="0.72" data-track-index="10"></audio>
+      
+      <audio data-hf-id="hf-5n69" id="sfx-b5-whoosh" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="28.0" data-duration="0.57" data-track-index="11"></audio>
+      <audio data-hf-id="hf-9icc" id="sfx-b5-ping" class="clip" src="assets/sfx/ping.mp3" data-start="29.6" data-duration="1.32" data-track-index="12"></audio>
+      
+      <audio data-hf-id="hf-6eul" id="sfx-b6-bass" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="35.4" data-duration="1.95" data-track-index="13"></audio>
+      <audio data-hf-id="hf-vhte" id="sfx-b6-glitch" class="clip" src="assets/sfx/glitch-1.mp3" data-start="43.0" data-duration="1.0" data-track-index="14"></audio>
+      
+      <audio data-hf-id="hf-u1wm" id="sfx-b7-pop" class="clip" src="assets/sfx/pop.mp3" data-start="63.8" data-duration="0.72" data-track-index="15"></audio>
+      <audio data-hf-id="hf-tu5i" id="sfx-b8-chime" class="clip" src="assets/sfx/chime.mp3" data-start="70.4" data-duration="2.5" data-track-index="16"></audio>
+
+      <!-- Beat 1: Title Card (Track 1) -->
+      <div data-hf-id="hf-eniv" id="beat-1" class="clip beat-container" data-composition-id="beat-1" data-composition-src="compositions/beat-1-title.html" data-start="0" data-duration="7.0" data-track-index="1"></div>
+
+      <!-- Beat 2: QA Bottleneck -->
+      <div data-hf-id="hf-ychd" id="beat-2" class="clip beat-container" data-composition-id="beat-2" data-composition-src="compositions/beat-2-qa.html" data-start="7.0" data-duration="7.0" data-track-index="1"></div>
+
+      <!-- Beat 3: QE Continuous -->
+      <div data-hf-id="hf-ucba" id="beat-3" class="clip beat-container" data-composition-id="beat-3" data-composition-src="compositions/beat-3-qe.html" data-start="14.0" data-duration="7.0" data-track-index="1"></div>
+
+      <!-- Beat 4: Differences comparison -->
+      <div data-hf-id="hf-ycxd" id="beat-4" class="clip beat-container" data-composition-id="beat-4" data-composition-src="compositions/beat-4-differences.html" data-start="21.0" data-duration="7.0" data-track-index="1"></div>
+
+      <!-- Beat 5: Feedback loops circle -->
+      <div data-hf-id="hf-g4ak" id="beat-5" class="clip beat-container" data-composition-id="beat-5" data-composition-src="compositions/beat-5-loops.html" data-start="28.0" data-duration="7.0" data-track-index="1"></div>
+
+      <!-- Beat 6: Sprint conveyor simulation (The Hero scene, 4x duration) -->
+      <div data-hf-id="hf-m1p0" id="beat-6" class="clip beat-container" data-composition-id="beat-6" data-composition-src="compositions/beat-6-simulation.html" data-start="35.0" data-duration="28.0" data-track-index="1"></div>
+
+      <!-- Beat 7: ROI details -->
+      <div data-hf-id="hf-ct5k" id="beat-7" class="clip beat-container" data-composition-id="beat-7" data-composition-src="compositions/beat-7-roi.html" data-start="63.0" data-duration="7.0" data-track-index="1"></div>
+
+      <!-- Beat 8: Outro CTA -->
+      <div data-hf-id="hf-m1dh" id="beat-8" class="clip beat-container" data-composition-id="beat-8" data-composition-src="compositions/beat-8-outro.html" data-start="70.0" data-duration="6.0" data-track-index="1"></div>
+
+      <script>
+        window.__timelines = window.__timelines || {};
+        const masterTL = gsap.timeline({ paused: true });
+
+        // Orchestrate simple CSS crossfades between sub-compositions (durations doubled/extended)
+        masterTL.fromTo("#beat-1", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 6.7);
+        masterTL.set("#beat-1", { opacity: 0 }, 7.0);
+        
+        masterTL.fromTo("#beat-2", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 7.0);
+        masterTL.to("#beat-2", { opacity: 0, duration: 0.3 }, 13.7);
+        masterTL.set("#beat-2", { opacity: 0 }, 14.0);
+
+        masterTL.fromTo("#beat-3", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 14.0);
+        masterTL.to("#beat-3", { opacity: 0, duration: 0.3 }, 20.7);
+        masterTL.set("#beat-3", { opacity: 0 }, 21.0);
+
+        masterTL.fromTo("#beat-4", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 21.0);
+        masterTL.to("#beat-4", { opacity: 0, duration: 0.3 }, 27.7);
+        masterTL.set("#beat-4", { opacity: 0 }, 28.0);
+
+        masterTL.fromTo("#beat-5", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 28.0);
+        masterTL.to("#beat-5", { opacity: 0, duration: 0.3 }, 34.7);
+        masterTL.set("#beat-5", { opacity: 0 }, 35.0);
+
+        masterTL.fromTo("#beat-6", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 35.0);
+        masterTL.to("#beat-6", { opacity: 0, duration: 0.3 }, 62.7);
+        masterTL.set("#beat-6", { opacity: 0 }, 63.0);
+
+        masterTL.fromTo("#beat-7", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 63.0);
+        masterTL.to("#beat-7", { opacity: 0, duration: 0.3 }, 69.7);
+        masterTL.set("#beat-7", { opacity: 0 }, 70.0);
+
+        masterTL.fromTo("#beat-8", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 70.0);
+
+        window.__timelines["master"] = masterTL;
+      </script>
+    </div>
+  </body>
+</html>

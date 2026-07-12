@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "webAnimations": 3,
+    "cssDeclarations": 4,
+    "scrollTargets": 0,
+    "cdpAnimations": 4,
+    "canvases": 0
+  },
+  "namedAnimations": [
+    "floatOrb"
+  ],
+  "scrollTriggeredElements": 0,
+  "representativeAnimations": [
+    {
+      "type": "CSSAnimation",
+      "playState": "running",
+      "animationName": "floatOrb",
+      "targetSelector": "div.orb.orb-1",
+      "targetRect": {
+        "x": -141.63827514648438,
+        "y": -102.8851318359375,
+        "width": 793.180908203125,
+        "height": 793.1808471679688,
+        "top": -102.8851318359375,
+        "right": 651.5426330566406,
+        "bottom": 690.2957153320312,
+        "left": -141.63827514648438
+      },
+      "keyframes": [
+        {
+          "offset": 0,
+          "easing": "ease-in-out",
+          "composite": "auto",
+          "transform": "translate(0px) scale(1)",
+          "computedOffset": 0
+        },
+        {
+          "offset": 1,
+          "easing": "ease-in-out",
+          "composite": "auto",
+          "transform": "translate(192px, 54px) scale(1.1)",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "duration": 20000,
+        "delay": 0,
+        "iterations": null,
+        "easing": "linear",
+        "direction": "alternate"
+      }
+    },
+    {
+      "type": "CSSAnimation",
+      "playState": "running",
+      "animationName": "floatOrb",
+      "targetSelector": "div.orb.orb-2",
+      "targetRect": {
+        "x": 1560.907470703125,
+        "y": 630.6695556640625,
+        "width": 618.673095703125,
+        "height": 618.6732177734375,
+        "top": 630.6695556640625,
+        "right": 2179.58056640625,
+        "bottom": 1249.3427734375,
+        "left": 1560.907470703125
+      },
+      "keyframes": [
+        {
+          "offset": 0,
+          "easing": "ease-in-out",
+          "composite": "auto",
+          "transform": "translate(0px) scale(1)",
+          "computedOffset": 0
+        },
+        {
+          "offset": 1,
+          "easing": "ease-in-out",
+          "composite": "auto",
+          "transform": "translate(192px, 54px) scale(1.1)",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "duration": 20000,
+        "delay": -5000,
+        "iterations": null,
+        "easing": "linear",
+        "direction": "alternate"
+      }
+    },
+    {
+      "type": "CSSAnimation",
+      "playState": "running",
+      "animationName": "floatOrb",
+      "targetSelector": "div.orb.orb-3",
+      "targetRect": {
+        "x": 937.21484375,
+        "y": 466.0779724121094,
+        "width": 421.603271484375,
+        "height": 421.6033020019531,
+        "top": 466.0779724121094,
+        "right": 1358.818115234375,
+        "bottom": 887.6812744140625,
+        "left": 937.21484375
+      },
+      "keyframes": [
+        {
+          "offset": 0,
+          "easing": "ease-in-out",
+          "composite": "auto",
+          "transform": "translate(0px) scale(1)",
+          "computedOffset": 0
+        },
+        {
+          "offset": 1,
+          "easing": "ease-in-out",
+          "composite": "auto",
+          "transform": "translate(192px, 54px) scale(1.1)",
+          "computedOffset": 1
+        }
+      ],
+      "timing": {
+        "duration": 20000,
+        "delay": -10000,
+        "iterations": null,
+        "easing": "linear",
+        "direction": "alternate"
+      }
+    }
+  ]
+}
